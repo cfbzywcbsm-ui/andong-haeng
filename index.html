@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>안동행(行)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 탑바 -->
+  <header class="topbar">
+    <h1 class="topbar-title">안동행</h1>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="content">
+
+    <!-- 즐겨찾기 정류장 카드 -->
+    <div class="card card-blue">
+      <p class="card-label">⭐ 즐겨찾기 정류장</p>
+      <h2 class="card-station">안동역 앞</h2>
+      <p class="card-info">100번 · 3분 후 도착</p>
+    </div>
+
+    <!-- 즐겨찾는 버스 -->
+    <div class="section-title">즐겨찾는 버스</div>
+    <div class="card card-white">
+      <span class="bus-number">100</span>
+      <div class="bus-info">
+        <p class="bus-route">안동역 → 터미널</p>
+        <p class="bus-arrive">3분 후 도착</p>
+      </div>
+      <span class="bus-status">운행중</span>
+    </div>
+
+    <!-- 현재 버스 위치 미니맵 -->
+    <div class="card card-map">
+      <p class="map-label">🗺 현재 버스 위치</p>
+    </div>
+
+  </main>
+
+  <!-- 하단 탭바 -->
+  <nav class="tabbar">
+    <a href="index.html" class="tab active">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">홈</span>
+    </a>
+    <a href="pages/search.html" class="tab">
+      <span class="tab-icon">🔍</span>
+      <span class="tab-label">노선</span>
+    </a>
+    <a href="pages/taxi.html" class="tab">
+      <span class="tab-icon">🚕</span>
+      <span class="tab-label">택시</span>
+    </a>
+    <a href="pages/menu.html" class="tab">
+      <span class="tab-icon">☰</span>
+      <span class="tab-label">메뉴</span>
+    </a>
+  </nav>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

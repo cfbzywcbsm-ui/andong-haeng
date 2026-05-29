@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시외버스/기차 - 안동행(行)</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- 탑바 -->
+  <header class="topbar">
+    <a href="menu.html" class="topbar-back">‹</a>
+    <h1 class="topbar-title">시외버스 / 기차</h1>
+  </header>
+
+  <main class="content">
+
+    <!-- 탭 버튼 -->
+    <div class="transit-tabs">
+      <button class="transit-tab active" onclick="showTab('bus')">시외버스</button>
+      <button class="transit-tab" onclick="showTab('train')">기차</button>
+    </div>
+
+    <!-- 시외버스 목록 -->
+    <div id="tab-bus">
+      <div class="section-title">안동 출발</div>
+
+      <div class="card card-white transit-card">
+        <p class="transit-dest">서울 (동서울)</p>
+        <p class="transit-time">09:00</p>
+      </div>
+
+      <div class="card card-white transit-card">
+        <p class="transit-dest">대구</p>
+        <p class="transit-time">10:30</p>
+      </div>
+
+      <div class="card card-white transit-card">
+        <p class="transit-dest">부산</p>
+        <p class="transit-time">12:00</p>
+      </div>
+    </div>
+
+    <!-- 기차 목록 -->
+    <div id="tab-train" style="display:none">
+      <div class="section-title">안동 출발</div>
+
+      <div class="card card-white transit-card">
+        <p class="transit-dest">서울 (청량리)</p>
+        <p class="transit-time">08:30</p>
+      </div>
+
+      <div class="card card-white transit-card">
+        <p class="transit-dest">부전 (부산)</p>
+        <p class="transit-time">11:00</p>
+      </div>
+
+      <div class="card card-white transit-card">
+        <p class="transit-dest">영천</p>
+        <p class="transit-time">13:20</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 하단 탭바 -->
+  <nav class="tabbar">
+    <a href="../index.html" class="tab">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">홈</span>
+    </a>
+    <a href="search.html" class="tab">
+      <span class="tab-icon">🔍</span>
+      <span class="tab-label">노선</span>
+    </a>
+    <a href="taxi.html" class="tab">
+      <span class="tab-icon">🚕</span>
+      <span class="tab-label">택시</span>
+    </a>
+    <a href="menu.html" class="tab active">
+      <span class="tab-icon">☰</span>
+      <span class="tab-label">메뉴</span>
+    </a>
+  </nav>
+
+  <script>
+    function showTab(type) {
+      document.getElementById('tab-bus').style.display = type === 'bus' ? 'block' : 'none';
+      document.getElementById('tab-train').style.display = type === 'train' ? 'block' : 'none';
+      document.querySelectorAll('.transit-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', (type === 'bus' && i === 0) || (type === 'train' && i === 1));
+      });
+    }
+  </script>
+
+</body>
+</html>

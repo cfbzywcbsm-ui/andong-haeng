@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴 - 안동행(行)</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- 홈 화면 블러 배경 -->
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+
+  <!-- 사이드 드로어 -->
+  <div class="drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">메뉴</span>
+      <button class="drawer-close" onclick="closeDrawer()">›</button>
+    </div>
+
+    <div class="drawer-content">
+
+      <!-- 알림 설정 -->
+      <div class="menu-item">
+        <span class="menu-label">알림 설정</span>
+        <label class="toggle">
+          <input type="checkbox" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="menu-divider"></div>
+
+      <!-- 다크모드 -->
+      <div class="menu-item">
+        <span class="menu-label">다크모드</span>
+        <label class="toggle">
+          <input type="checkbox">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="menu-divider"></div>
+
+      <!-- 시외버스/기차 -->
+      <a href="transit.html" class="menu-item menu-link">
+        <span class="menu-label">시외버스 / 기차</span>
+        <span class="menu-arrow">›</span>
+      </a>
+      <div class="menu-divider"></div>
+
+      <!-- 버전 정보 -->
+      <div class="menu-item">
+        <span class="menu-label menu-gray">버전 정보</span>
+        <span class="menu-version">v1.0.0</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 하단 탭바 -->
+  <nav class="tabbar">
+    <a href="../index.html" class="tab">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">홈</span>
+    </a>
+    <a href="search.html" class="tab">
+      <span class="tab-icon">🔍</span>
+      <span class="tab-label">노선</span>
+    </a>
+    <a href="taxi.html" class="tab">
+      <span class="tab-icon">🚕</span>
+      <span class="tab-label">택시</span>
+    </a>
+    <a href="menu.html" class="tab active">
+      <span class="tab-icon">☰</span>
+      <span class="tab-label">메뉴</span>
+    </a>
+  </nav>
+
+  <script>
+    function closeDrawer() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
