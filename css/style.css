@@ -480,3 +480,52 @@ body {
   font-weight: 700;
   color: #0055CC;
 }
+
+/* ── 다크모드 ── */
+body.dark-mode {
+  background-color: #1C1C1E;
+}
+
+body.dark-mode .topbar {
+  background-color: #1A3A6B;
+}
+
+body.dark-mode .card-white {
+  background-color: #2C2C2E;
+}
+
+body.dark-mode .bus-route,
+body.dark-mode .route-station,
+body.dark-mode .menu-label,
+body.dark-mode .taxi-name,
+body.dark-mode .transit-dest {
+  color: #FFFFFF;
+}
+
+body.dark-mode .section-title {
+  color: #EBEBF5;
+}
+
+body.dark-mode .tabbar {
+  background-color: #2C2C2E;
+}
+
+body.dark-mode .tab {
+  color: #636366;
+}
+
+body.dark-mode .tab.active {
+  color: #4D9FFF;
+}
+
+body.dark-mode .drawer {
+  background-color: #2C2C2E;
+}
+
+body.dark-mode .menu-gray {
+  color: #636366;
+}
+
+body.dark-mode .transit-desc-text {
+  color: #FFFFFF;
+}

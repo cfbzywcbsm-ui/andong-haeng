@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>시외버스/기차 - 안동행(行)</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
 <body>
 
@@ -22,64 +23,58 @@
       <button class="transit-tab" onclick="showTab('train')">기차</button>
     </div>
 
-    <!-- 시외버스 목록 -->
+    <!-- 시외버스 -->
     <div id="tab-bus">
-      <div class="section-title">안동 출발</div>
+      <div class="section-title">안동 시외버스터미널</div>
 
-      <div class="card card-white transit-card">
-        <p class="transit-dest">서울 (동서울)</p>
-        <p class="transit-time">09:00</p>
+      <div class="card card-white" style="padding: 20px 16px; margin-bottom: 12px;">
+        <p class="transit-desc-text">안동 시외버스터미널 시간표 및 예매는<br>아래 버튼을 통해 확인하세요.</p>
       </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">서울 (동서울)</p>
-        <p class="transit-time">11:30</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">대구</p>
-        <p class="transit-time">10:30</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">대구</p>
-        <p class="transit-time">14:00</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">부산</p>
-        <p class="transit-time">12:00</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">포항</p>
-        <p class="transit-time">13:40</p>
-      </div>
+
+      <a href="https://www.busterminal.co.kr" target="_blank" class="card card-white taxi-card" style="margin-bottom:12px;">
+        <span class="taxi-icon"><span class="iconify" data-icon="material-symbols:directions-bus" style="font-size:28px; color:#0055CC;"></span></span>
+        <div class="taxi-info">
+          <p class="taxi-name">시외버스 터미널</p>
+          <p class="taxi-desc">시간표 및 예매 확인</p>
+        </div>
+        <span class="taxi-arrow">›</span>
+      </a>
+
+      <a href="tel:054-857-8296" class="card card-white taxi-card">
+        <span class="taxi-icon"><span class="iconify" data-icon="material-symbols:call" style="font-size:28px; color:#0055CC;"></span></span>
+        <div class="taxi-info">
+          <p class="taxi-name">안동터미널 전화</p>
+          <p class="taxi-desc">054-857-8296</p>
+        </div>
+        <span class="taxi-arrow">›</span>
+      </a>
     </div>
 
-    <!-- 기차 목록 -->
+    <!-- 기차 -->
     <div id="tab-train" style="display:none">
-      <div class="section-title">안동 출발</div>
+      <div class="section-title">안동역</div>
 
-      <div class="card card-white transit-card">
-        <p class="transit-dest">서울 (청량리)</p>
-        <p class="transit-time">08:30</p>
+      <div class="card card-white" style="padding: 20px 16px; margin-bottom: 12px;">
+        <p class="transit-desc-text">안동역 기차 시간표 및 예매는<br>아래 버튼을 통해 확인하세요.</p>
       </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">서울 (청량리)</p>
-        <p class="transit-time">12:15</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">부전 (부산)</p>
-        <p class="transit-time">11:00</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">부전 (부산)</p>
-        <p class="transit-time">15:30</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">영천</p>
-        <p class="transit-time">13:20</p>
-      </div>
-      <div class="card card-white transit-card">
-        <p class="transit-dest">의성</p>
-        <p class="transit-time">09:45</p>
-      </div>
+
+      <a href="https://www.letskorail.com" target="_blank" class="card card-white taxi-card" style="margin-bottom:12px;">
+        <span class="taxi-icon"><span class="iconify" data-icon="material-symbols:train" style="font-size:28px; color:#0055CC;"></span></span>
+        <div class="taxi-info">
+          <p class="taxi-name">코레일 홈페이지</p>
+          <p class="taxi-desc">기차 시간표 및 예매</p>
+        </div>
+        <span class="taxi-arrow">›</span>
+      </a>
+
+      <a href="tel:1544-7788" class="card card-white taxi-card">
+        <span class="taxi-icon"><span class="iconify" data-icon="material-symbols:call" style="font-size:28px; color:#0055CC;"></span></span>
+        <div class="taxi-info">
+          <p class="taxi-name">코레일 고객센터</p>
+          <p class="taxi-desc">1544-7788</p>
+        </div>
+        <span class="taxi-arrow">›</span>
+      </a>
     </div>
 
   </main>
@@ -87,19 +82,19 @@
   <!-- 하단 탭바 -->
   <nav class="tabbar">
     <a href="../index.html" class="tab">
-      <span class="tab-icon">🏠</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:home"></span></span>
       <span class="tab-label">홈</span>
     </a>
     <a href="search.html" class="tab">
-      <span class="tab-icon">🔍</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:search"></span></span>
       <span class="tab-label">노선</span>
     </a>
     <a href="taxi.html" class="tab">
-      <span class="tab-icon">🚕</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:local-taxi"></span></span>
       <span class="tab-label">택시</span>
     </a>
     <a href="menu.html" class="tab active">
-      <span class="tab-icon">☰</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:menu"></span></span>
       <span class="tab-label">메뉴</span>
     </a>
   </nav>
@@ -111,6 +106,10 @@
       document.querySelectorAll('.transit-tab').forEach((tab, i) => {
         tab.classList.toggle('active', (type === 'bus' && i === 0) || (type === 'train' && i === 1));
       });
+    }
+
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
     }
   </script>
 

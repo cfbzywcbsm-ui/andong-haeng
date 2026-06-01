@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>안동행(行)</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 
     <!-- 즐겨찾기 정류장 카드 -->
     <div class="card card-blue">
-      <p class="card-label">⭐ 즐겨찾기 정류장</p>
+      <p class="card-label">즐겨찾기 정류장</p>
       <h2 class="card-station">안동역 앞</h2>
       <p class="card-info" id="favorite-info">100번 · 불러오는 중...</p>
     </div>
@@ -61,24 +62,25 @@
   </main>
 
   <!-- 하단 탭바 -->
-  <nav class="tabbar">
+<nav class="tabbar">
     <a href="index.html" class="tab active">
-      <span class="tab-icon">🏠</span>
+      <span class="iconify tab-icon" data-icon="material-symbols:home"></span>
       <span class="tab-label">홈</span>
     </a>
     <a href="pages/search.html" class="tab">
-      <span class="tab-icon">🔍</span>
+      <span class="iconify tab-icon" data-icon="material-symbols:search"></span>
       <span class="tab-label">노선</span>
     </a>
     <a href="pages/taxi.html" class="tab">
-      <span class="tab-icon">🚕</span>
+      <span class="iconify tab-icon" data-icon="material-symbols:local-taxi"></span>
       <span class="tab-label">택시</span>
     </a>
     <a href="pages/menu.html" class="tab">
-      <span class="tab-icon">☰</span>
+      <span class="iconify tab-icon" data-icon="material-symbols:menu"></span>
       <span class="tab-label">메뉴</span>
     </a>
   </nav>
+  
 
   <script>
     // 더미 데이터 (실제 API 연동 시 교체 예정)
@@ -104,5 +106,10 @@
     setInterval(updateBusInfo, 60000);
   </script>
 
+<script>
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 </body>
 </html>

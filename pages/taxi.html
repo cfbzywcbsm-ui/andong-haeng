@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>택시 - 안동행(行)</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
 <body>
 
@@ -17,7 +18,7 @@
 
     <!-- 안동 콜택시 -->
     <a href="tel:054-850-5555" class="card card-white taxi-card">
-      <span class="taxi-icon">📞</span>
+      <span class="taxi-icon"><span class="iconify" data-icon="material-symbols:call" style="font-size:28px; color:#0055CC;"></span></span>
       <div class="taxi-info">
         <p class="taxi-name">안동 콜택시</p>
         <p class="taxi-desc">탭하여 전화 연결</p>
@@ -27,7 +28,7 @@
 
     <!-- 행복택시 -->
     <a href="tel:054-852-0082" class="card card-white taxi-card">
-      <span class="taxi-icon">♿</span>
+      <span class="taxi-icon"><span class="iconify" data-icon="material-symbols:accessible" style="font-size:28px; color:#0055CC;"></span></span>
       <div class="taxi-info">
         <p class="taxi-name">행복 택시</p>
         <p class="taxi-desc">탭하여 전화 연결</p>
@@ -40,22 +41,27 @@
   <!-- 하단 탭바 -->
   <nav class="tabbar">
     <a href="../index.html" class="tab">
-      <span class="tab-icon">🏠</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:home"></span></span>
       <span class="tab-label">홈</span>
     </a>
     <a href="search.html" class="tab">
-      <span class="tab-icon">🔍</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:search"></span></span>
       <span class="tab-label">노선</span>
     </a>
     <a href="taxi.html" class="tab active">
-      <span class="tab-icon">🚕</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:local-taxi"></span></span>
       <span class="tab-label">택시</span>
     </a>
     <a href="menu.html" class="tab">
-      <span class="tab-icon">☰</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:menu"></span></span>
       <span class="tab-label">메뉴</span>
     </a>
   </nav>
 
+<script>
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 </body>
 </html>

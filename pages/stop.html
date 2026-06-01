@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정류장 상세 - 안동행(行)</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
 <body>
 
@@ -50,19 +51,19 @@
   <!-- 하단 탭바 -->
   <nav class="tabbar">
     <a href="../index.html" class="tab">
-      <span class="tab-icon">🏠</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:home"></span></span>
       <span class="tab-label">홈</span>
     </a>
     <a href="search.html" class="tab active">
-      <span class="tab-icon">🔍</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:search"></span></span>
       <span class="tab-label">노선</span>
     </a>
     <a href="taxi.html" class="tab">
-      <span class="tab-icon">🚕</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:local-taxi"></span></span>
       <span class="tab-label">택시</span>
     </a>
     <a href="menu.html" class="tab">
-      <span class="tab-icon">☰</span>
+      <span class="tab-icon"><span class="iconify" data-icon="material-symbols:menu"></span></span>
       <span class="tab-label">메뉴</span>
     </a>
   </nav>
@@ -91,5 +92,10 @@
     setInterval(updateArrivals, 60000);
   </script>
 
+<script>
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 </body>
 </html>
