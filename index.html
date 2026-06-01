@@ -20,18 +20,37 @@
     <div class="card card-blue">
       <p class="card-label">⭐ 즐겨찾기 정류장</p>
       <h2 class="card-station">안동역 앞</h2>
-      <p class="card-info">100번 · 3분 후 도착</p>
+      <p class="card-info" id="favorite-info">100번 · 불러오는 중...</p>
     </div>
 
     <!-- 즐겨찾는 버스 -->
     <div class="section-title">즐겨찾는 버스</div>
+
     <div class="card card-white">
       <span class="bus-number">100</span>
       <div class="bus-info">
         <p class="bus-route">안동역 → 터미널</p>
-        <p class="bus-arrive">3분 후 도착</p>
+        <p class="bus-arrive arrive-green" id="bus-100">불러오는 중...</p>
       </div>
       <span class="bus-status">운행중</span>
+    </div>
+
+    <div class="card card-white">
+      <span class="bus-number">111</span>
+      <div class="bus-info">
+        <p class="bus-route">터미널 → 옥동</p>
+        <p class="bus-arrive arrive-green" id="bus-111">불러오는 중...</p>
+      </div>
+      <span class="bus-status">운행중</span>
+    </div>
+
+    <div class="card card-white">
+      <span class="bus-number bus-number-gray">200</span>
+      <div class="bus-info">
+        <p class="bus-route bus-route-gray">안동역 → 경북도청</p>
+        <p class="bus-arrive arrive-gray">정보 없음</p>
+      </div>
+      <span class="bus-status" style="color:#AAAAAA">미운행</span>
     </div>
 
     <!-- 현재 버스 위치 미니맵 -->
@@ -61,6 +80,29 @@
     </a>
   </nav>
 
-  <script src="js/main.js"></script>
+  <script>
+    // 더미 데이터 (실제 API 연동 시 교체 예정)
+    const busData = [
+      { id: 'bus-100', favoriteId: 'favorite-info', minutes: 3 },
+      { id: 'bus-111', minutes: 8 },
+    ];
+
+    function updateBusInfo() {
+      busData.forEach(bus => {
+        const el = document.getElementById(bus.id);
+        if (el) el.textContent = `${bus.minutes}분 후 도착`;
+        if (bus.favoriteId) {
+          const fav = document.getElementById(bus.favoriteId);
+          if (fav) fav.textContent = `100번 · ${bus.minutes}분 후 도착`;
+        }
+        bus.minutes = Math.max(1, bus.minutes - 1);
+      });
+    }
+
+    // 1분마다 카운트다운
+    updateBusInfo();
+    setInterval(updateBusInfo, 60000);
+  </script>
+
 </body>
 </html>
