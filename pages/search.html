@@ -13,31 +13,16 @@
     <h1 class="topbar-title">노선 검색</h1>
   </header>
 
-  <!-- 검색바 -->
   <main class="content">
+    <!-- 검색바 -->
     <div class="search-box">
       <span class="search-icon">🔍</span>
-      <input type="text" class="search-input" placeholder="버스 번호 또는 정류장 이름">
+      <input type="text" class="search-input" id="search-input" placeholder="버스 번호 또는 정류장 이름">
     </div>
 
     <!-- 검색 결과 -->
-    <div class="section-title">검색 결과</div>
-
-    <div class="card card-white">
-      <span class="bus-number">100</span>
-      <div class="bus-info">
-        <p class="bus-route">안동역 → 터미널</p>
-        <p class="bus-arrive">버스</p>
-      </div>
-    </div>
-
-    <div class="card card-white">
-      <span class="bus-number">212</span>
-      <div class="bus-info">
-        <p class="bus-route">안동역 → 안동대학교</p>
-        <p class="bus-arrive">버스</p>
-      </div>
-    </div>
+    <div class="section-title" id="result-title">전체 노선</div>
+    <div id="result-list"></div>
 
   </main>
 
@@ -60,6 +45,59 @@
       <span class="tab-label">메뉴</span>
     </a>
   </nav>
+
+  <script>
+    // 더미 버스 노선 데이터
+    const busRoutes = [
+      { number: '100', route: '안동역 → 터미널', type: '시내버스' },
+      { number: '110', route: '국립경국대 → 안동역(안동터미널)', type: '시내버스' },
+      { number: '111', route: '터미널 → 옥동', type: '시내버스' },
+      { number: '112', route: '안동역 → 안동역(안동터미널)', type: '시내버스' },
+      { number: '200', route: '안동역 → 경북도청', type: '시내버스' },
+      { number: '212', route: '안동역 → 안동대학교', type: '시내버스' },
+      { number: '240', route: '터미널 → 강남동', type: '시내버스' },
+      { number: '250', route: '안동역 → 풍산', type: '시내버스' },
+    ];
+
+    function renderList(data) {
+      const list = document.getElementById('result-list');
+      if (data.length === 0) {
+        list.innerHTML = `<p style="text-align:center; color:#AAAAAA; padding:32px;">검색 결과가 없습니다</p>`;
+        return;
+      }
+      list.innerHTML = data.map(bus => `
+        <div class="card card-white" style="margin-bottom:8px;">
+          <span class="bus-number">${bus.number}</span>
+          <div class="bus-info">
+            <p class="bus-route">${bus.route}</p>
+            <p class="bus-arrive" style="color:#AAAAAA;">${bus.type}</p>
+          </div>
+          <span style="font-size:20px; color:#AAAAAA;">›</span>
+        </div>
+      `).join('');
+    }
+
+   // 초기에는 빈 화면
+renderList([]);
+document.getElementById('result-title').style.display = 'none';
+
+    // 검색 기능
+    document.getElementById('search-input').addEventListener('input', function() {
+      const keyword = this.value.trim();
+      const title = document.getElementById('result-title');
+
+    if (keyword === '') {
+  title.style.display = 'none';
+  renderList([]);
+      } else {
+        title.textContent = `"${keyword}" 검색 결과`;
+        const filtered = busRoutes.filter(bus =>
+          bus.number.includes(keyword) || bus.route.includes(keyword)
+        );
+        renderList(filtered);
+      }
+    });
+  </script>
 
 </body>
 </html>

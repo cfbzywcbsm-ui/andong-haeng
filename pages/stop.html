@@ -23,7 +23,7 @@
       <span class="bus-number">100</span>
       <div class="bus-info">
         <p class="bus-route">안동역 → 터미널</p>
-        <p class="bus-arrive arrive-green">3분 후 도착</p>
+        <p class="bus-arrive arrive-green" id="arrive-100">3분 후 도착</p>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
       <span class="bus-number">212</span>
       <div class="bus-info">
         <p class="bus-route">안동역 → 안동터미널</p>
-        <p class="bus-arrive arrive-green">11분 후 도착</p>
+        <p class="bus-arrive arrive-green" id="arrive-212">11분 후 도착</p>
       </div>
     </div>
 
@@ -66,6 +66,30 @@
       <span class="tab-label">메뉴</span>
     </a>
   </nav>
+
+  <script>
+    // 더미 카운트다운
+    const buses = [
+      { id: 'arrive-100', minutes: 3 },
+      { id: 'arrive-212', minutes: 11 },
+    ];
+
+    function updateArrivals() {
+      buses.forEach(bus => {
+        const el = document.getElementById(bus.id);
+        if (!el) return;
+        if (bus.minutes <= 0) {
+          el.textContent = '곧 도착';
+        } else {
+          el.textContent = `${bus.minutes}분 후 도착`;
+          bus.minutes--;
+        }
+      });
+    }
+
+    updateArrivals();
+    setInterval(updateArrivals, 60000);
+  </script>
 
 </body>
 </html>
