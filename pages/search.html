@@ -22,7 +22,7 @@
     </div>
 
     <!-- 검색 결과 -->
-    <div class="section-title" id="result-title">전체 노선</div>
+    <div class="section-title" id="result-title"></div>
     <div id="result-list"></div>
 
   </main>
@@ -48,7 +48,6 @@
   </nav>
 
   <script>
-    // 더미 버스 노선 데이터
     const busRoutes = [
       { number: '100', route: '안동역 → 터미널', type: '시내버스' },
       { number: '110', route: '국립경국대 → 안동역(안동터미널)', type: '시내버스' },
@@ -67,30 +66,29 @@
         return;
       }
       list.innerHTML = data.map(bus => `
-        <div class="card card-white" style="margin-bottom:8px;">
+        <a href="stop.html" class="card card-white" style="margin-bottom:8px; text-decoration:none;">
           <span class="bus-number">${bus.number}</span>
           <div class="bus-info">
             <p class="bus-route">${bus.route}</p>
             <p class="bus-arrive" style="color:#AAAAAA;">${bus.type}</p>
           </div>
           <span style="font-size:20px; color:#AAAAAA;">›</span>
-        </div>
+        </a>
       `).join('');
     }
 
-   // 초기에는 빈 화면
-renderList([]);
-document.getElementById('result-title').style.display = 'none';
+    renderList([]);
+    document.getElementById('result-title').style.display = 'none';
 
-    // 검색 기능
     document.getElementById('search-input').addEventListener('input', function() {
       const keyword = this.value.trim();
       const title = document.getElementById('result-title');
 
-    if (keyword === '') {
-  title.style.display = 'none';
-  renderList([]);
+      if (keyword === '') {
+        title.style.display = 'none';
+        renderList([]);
       } else {
+        title.style.display = 'block';
         title.textContent = `"${keyword}" 검색 결과`;
         const filtered = busRoutes.filter(bus =>
           bus.number.includes(keyword) || bus.route.includes(keyword)
@@ -100,10 +98,11 @@ document.getElementById('result-title').style.display = 'none';
     });
   </script>
 
-<script>
-  if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-</script>
+  <script>
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+
 </body>
 </html>
